@@ -1,0 +1,195 @@
+---
+title: "Creating Dashboards"
+subtitle: ""  
+author: 
+  - "Dr Thiyanga S. Talagala"
+  - ""
+date: ''
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#081d58",
+  text_bold_color = "#ce1256",
+  title_slide_text_color = "#edf8b1",
+  header_font_google = google_font("Josefin Sans"),
+  base_font_size = "20px",
+  text_font_size = "1.5rem"
+ #text_font_google   = google_font("Montserrat", "300", "300i")
+ # code_font_google   = google_font("Fira Mono")
+)
+```
+
+class: center, inverse, middle
+
+# What were the challenges that you faced when planning the dashboard?
+
+---
+
+class: center, inverse, middle
+
+# Essential tips and considerations
+
+---
+
+## 1. Your audience and use cases
+
+- Who is going to use your dashboard?
+
+- For what purposes will they use your dashboard?
+
+- Do not use user specific-tabs
+
+---
+
+## 2. Decide on the goals
+
+What information will the user/ users be looking at?
+
+---
+
+## 3. Display information clearly and effectively
+
+## 4. Communicate information quickly
+
+Your dashboard should be,
+
+  - simple,
+  
+  - easy to understand,
+  
+  - easy to read,
+  
+  - helpful without increasing **cognitive load**.
+  
+
+  
+
+---
+
+## 5. Select an appropriate color theme
+
+## 6. Clear and consistent naming conventions
+
+## 7. Effectively use the space
+
+---
+
+## 8. Use the right type of visualization
+
+**What do you want to show?**
+
+- Composition
+
+- Comparison
+
+- Distributions
+
+- Relationships
+
+**Types of visualizations**
+
+- Static
+
+- Dynamic
+
+- Interactive
+
+---
+
+## Static
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(gganimate)
+theme_set(theme_bw())
+library(gapminder)
+p <- ggplot(
+  gapminder, 
+  aes(x = gdpPercap, y=lifeExp, size = pop, colour = country)
+  ) +
+  geom_point(show.legend = FALSE, alpha = 0.7) +
+  scale_color_viridis_d() +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  labs(x = "GDP per capita", y = "Life expectancy")
+p 
+```
+  
+---
+
+## Interactive
+
+```{r, echo=FALSE}
+library(plotly)
+ggplotly(p)
+```
+
+---
+## Dynamic
+
+```{r, echo=FALSE}
+p + transition_time(year) +
+  labs(title = "Year: {frame_time}")
+
+```
+
+
+---
+## 9. Use interactive filters
+
+- Chart zoom
+
+- Drill-through
+
+- Drill-downs
+
+- Click-to-filters
+
+- Cross tabs
+
+---
+## 10. Optimize for multiple screens
+
+- Desktop
+
+- Mobile, etc.
+
+---
+
+class: center, inverse
+
+# Let's create a dashboard
+
+Packages
+
+library(shiny)
+
+library(shinydashboard)
+
+library(scemantic.dashboard)
+
+library(flexdashboard)
