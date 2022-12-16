@@ -25,7 +25,7 @@ STA 474 2.0 Statistical Consultancy
 
 
 
-Course outline: [click here](/static/co/STA474_2_statistical_consultancy_2022_2023.pdf)
+Course outline: [click here](/co/STA474_2_statistical_consultancy_2022_2023.pdf)
 
 **Project log form template:**
 
