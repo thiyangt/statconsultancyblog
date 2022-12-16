@@ -41,7 +41,7 @@ Course outline: [click here]
 
 Lecture 1: [click here](https://thiyangt.github.io/statconsultancy/#53)
 
-Lecture 2: [click here](/static/slides/lecture2.html)
+Lecture 2: [click here](/slides/lecture2.html)
 
 ## Rcodes
 
