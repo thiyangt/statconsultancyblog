@@ -1,0 +1,261 @@
+---
+output: pdf_document
+header-includes:
+- \usepackage{fancyhdr}
+- \usepackage{graphicx}
+- \usepackage{enumitem}
+- \usepackage{setspace}
+- \usepackage{multicol} 
+- \usepackage{color}
+- \usepackage{colortbl} 
+- \usepackage{hyperref}
+- \usepackage{hhline}
+- \usepackage{multirow}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\vspace{0.5cm}
+
+\begin{table}[!h]
+\begin{tabular}{l@{\hspace{21em}}r@{}>{${}={}$\hfill}r}
+\multirow{3}{*}{\includegraphics[width = 0.1\textwidth]{SJPLogo.jpg}} & \textbf{B.Sc. (Honours) Statistics Degree Program} \\
+                  &  \textbf{Faculty of Applied Sciences} \\
+                  & \textbf{University of Sri Jayewardenepura} 
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[!h]
+\begin{tabular}{|p{7.5cm}|p{8.5cm}|}
+\hline
+ \cellcolor{yellow!25} \textbf{Course Title} &  \textbf{Statistical Consultancy}\\ \hline
+ \cellcolor{yellow!25} \textbf{Course Code} &  \textbf{STA 474 2.0 }\\ \hline
+ \cellcolor{yellow!25} \textbf{Credit Value} & 02 \\ \hline
+ \cellcolor{yellow!25} \textbf{Status} &  Core \\ \hline
+ \cellcolor{yellow!25} \textbf{Year/ Level} & Year 4 \\ \hline
+ \cellcolor{yellow!25} \textbf{Semester}  & 2 \\ \hline
+ \cellcolor{yellow!25} \textbf{Theory: Practical: Independent Learning}  &  30 : 00 : 70\\ \hline
+ \cellcolor{yellow!25} \textbf{Other: Pre-requisite course/s} & All statistics course units \\ \hline
+\end{tabular}
+\end{table}
+
+\vspace{0.2cm}
+
+\begin{table}[!h]
+\begin{tabular}{|p{16cm}|}
+\hline
+\cellcolor{yellow!25} \textbf{Aims of the Course:}\\ \hline
+\end{tabular}
+\end{table}
+\vspace{0.2cm}
+
+STA 474 2.0 provides students with an opportunity to gain practical experience in consulting through various projects with clients through the Statistical Consulting Service, University of Sri Jayewardenepura. The overall aim of STA 474 2.0 is 
+
+- to provide students with practical consulting and communication skills, such as how to present results verbally and in a written report, and 
+
+- how to work cooperatively with other statistical consultants.
+
+
+\begin{table}[!h]
+\begin{tabular}{|p{16cm}|}
+\hline
+\cellcolor{yellow!25} \textbf{Intended Learning Outcomes:}\\ \hline
+\end{tabular}
+\end{table}
+
+*On the successful completion of this course, the student should be able to:*
+
+\begin{enumerate}[label*=\arabic*.]
+	\setlength\itemsep{0.1mm}
+	\item Explain and demonstrate the role of a good statistical consultant.
+		\item Use open source statistical software to apply statistical methods and techniques.
+		\item Select and apply appropriate statistical models and methods for a range of statistical problems.
+	\item Interpret the results of analysis and communicate these to a broad audience.
+	\item Write statistical consulting reports that clearly describe complex analyses to the non-specialist reader.
+	\item Communicate through written and oral presentation based on statistical analysis for audience from a variety of health-related areas (e.g. public health, medicine, genetics, biology, psychology, nursing, or pharmacy) and for the broad scientific community.
+\end{enumerate}
+
+
+
+
+\begin{table}[!h]
+\begin{tabular}{|p{16cm}|}
+\hline
+\cellcolor{yellow!25} \textbf{Course Content:}\\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{enumerate}[label*=\arabic*.]
+	\setlength\itemsep{0.1mm}
+	\item About statistical consulting
+		\begin{enumerate}[label*=\arabic*.]
+	\item Communication
+	\item Asking questions
+	\item Managing a statistical consultancy session
+	\item Dealing with difficult clients
+	\item Consulting from start to finish
+	\end{enumerate}
+	\item Guide to communicating results
+	\begin{enumerate}[label*=\arabic*.]
+	\item Communicating results to general audience
+	\item Making a targeted presentation: Who is your audience?, Common errors to watch out, Engaging with non-expert audience
+	\end{enumerate}
+	\item Technical aspects of consulting
+	\begin{enumerate}[label*=\arabic*.]
+	\item Design of experiments and Sampling
+	\item Observational studies
+	\item Data wrangling: Tidy data principles, Reshaping data into tidy form, Data transformation
+	\item Data visualization: The grammar of graphics
+	\item Static graphics vs Dynamic graphics
+	\item Dynamic reproducible reporting
+	\end{enumerate}
+\end{enumerate}
+
+\begin{table}[!h]
+\begin{tabular}{|p{16cm}|}
+\hline
+\cellcolor{yellow!25} \textbf{Scope and Schedule of Teaching - Learning Activities:}\\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[!h]
+\small
+\begin{tabular}{|p{1cm}|p{4cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{3.5cm}|p{2cm}|p{1.5cm}|}
+\hline
+\multirow{2}{1cm}{\textbf{Topic No.}} & \multirow{2}{5cm}{\textbf{Topic/Sub Topic}} &  \multicolumn{3}{l|}{\textbf{No. of Hrs}} & \multirow{2}{2cm}{\textbf{Teaching Method}} & \multirow{2}{2cm}{\textbf{Assessment Criteria}} &  \multirow{2}{2cm}{\textbf{ILO Alignment}} \\ \cline{3-5}
+          &            &   \textbf{T}    &   \textbf{P}    &    \textbf{IL}   &            &         &               \\ \hline
+ 1                 &   About statistical consulting                &   2    &    0   &    4   &       Lecture \newline \textbf{FA1: Timetable Visualization}            &      10\% of Final Marks              &        1           \\ \hline
+ 2                 &     Dashboard visualization               &    2   &  0     &  4    &      Lecture/ Flipped classroom \newline \textbf{FA1: Dashboard}                 &       10\% of Final Marks             &    2, 3               \\ \hline
+ 3             &    Guide to communicating results               &    2   &  0     &   4    &         Lecture/ Discussion              &                   &    1, 6               \\ \hline
+ 4                 &      Data wrangling              &  2     &   0    &   4   &       Lecture/ Discussion \newline \textbf{FA2: Client's project }                &     10\% of Final Marks               &            2, 3       \\ \hline
+5                  &     Data Visualisation               &   2    &   0    &  5    &      Lecture/ Discussion \newline \textbf{FA3: Client's project}                  &                   &   3, 4                \\ \hline
+ 6                 &           Data Visualisation       &   2    &  0     &   5    &        Lecture/ Discussion/ Revise graphics               &                   &          3, 4        \\ \hline
+7                  &   Design Experiments and Sampling, Observational Studies              &    2   &  0     &  5     &       Lecture/ Discussion/ \newline \textbf{FA4: Client's project}               &       10\% of Final Marks             &           4, 6        \\ \hline
+8                 &    Statistical consultancy survey/ Coding book            &    2   &   0    &   5    &        Lecture/ Discussion \newline \textbf{FA5: Survey }               &    10\% of Final Marks                 &       2, 3, 4, 5, 6            \\ \hline
+9                 &    Writing statistical consulting report.              &    2   &   0    &   5    &        Lecture/ Virtual Discussion Forum             &                   &      5, 6            \\ \hline
+10                 &    Statistical consultancy with clients   - Project Analysis           &    2   &   0   &   5   &        Discussion Forum  \newline \textbf{FA6: Client's project }           &      10\% of Final Marks              &      2, 3, 4, 5, 6              \\ \hline
+11                 &    Discussion of the analysis - FA2 and FA4              &    2   &   0   &   5    &        Lecture/ Discussion              &                   &      5, 6             \\ \hline
+12                 &    Statistical consultancy with clients   - Project analysis           &    2   &   0    &   5    &        Lecture/ Discussion  \newline \textbf{FA7: Shiny app}           &    10\% of Final Marks               &      2, 3, 4, 5, 6             \\ \hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\begin{table}[!h]
+\begin{tabular}{|p{16cm}|}
+\hline
+\cellcolor{yellow!25} \textbf{Scope and Schedule of Teaching - Learning Activities (cont.):}\\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+\small
+\begin{tabular}{|p{1cm}|p{4cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{3.5cm}|p{2cm}|p{1.5cm}|}
+\hline
+\multirow{2}{1cm}{\textbf{Topic No.}} & \multirow{2}{5cm}{\textbf{Topic/Sub Topic}} &  \multicolumn{3}{l|}{\textbf{No. of Hrs}} & \multirow{2}{2cm}{\textbf{Teaching Method}} & \multirow{2}{2cm}{\textbf{Assessment Criteria}} &  \multirow{2}{2cm}{\textbf{ILO Alignment}} \\ \cline{3-5}
+          &            &   \textbf{T}    &   \textbf{P}    &    \textbf{IL}   &            &         &               \\ \hline
+ 13                 &   Discussion of the analysis - FA5                &   2    &    0   &    5   &       Lecture/ Discussion             &      &  3, 4, 5, 6           \\ \hline
+ 14            &   Writing logbook/ Meeting with clients            &    2   &  0    &   5    &         Lecture/ Discussion              &                   &    1, 6               \\ \hline
+ 15                 &     A recapitulation/ ways to continue as a statistical consultant               &    2   &  0     &  4    &      Lecture \newline \textbf{SA: Summative assessment}                 &     30\% of Final Marks               &    1               \\ \hline
+              &    Total              &    30   &       &  70    &                     &             &    1, 2, 3, 4, 5, 6               \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+\begin{tabular}{|p{16cm}|}
+\hline
+\cellcolor{yellow!25} \textbf{Linking Program Outcomes with ILOs:}\\ \hline
+\end{tabular}
+\end{table}
+
+**Program Outcomes: B.Sc. Honours degree**
+
+1. Demonstrate competency in theoretical knowledge and practical and/or technical skills in the respective field of specialization (statistics).
+
+2. Communicate efficiently and effectively in the respective field of specialization using written, oral, visual and/or electronic forms.
+
+3. Facilitate and participate as an empathetic and emotionally intelligent team player with leadership qualities, in a group, diverse team or organization.
+
+4. Apply subject-specific knowledge and skills creatively to solve real-world problems by making context-specific operational decisions while adapting to changing environments.
+
+5. Integrate creativity, innovation, and entrepreneurial and managerial proficiencies to build values.
+
+6. Implement subject-based solutions in keeping with ethical, societal and environmental norms and need for sustainable development.
+
+7. Secure life goals through lifelong learning with the aim of scholarly advancement and/or strengthening professional skills, and ensuring the betterment of the community.
+
+
+\begin{table}[!h]
+\center
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+ & \cellcolor{black!25}\textbf{PLO 1} & \cellcolor{black!25}\textbf{PLO 2} & \cellcolor{black!25}\textbf{PLO 3}  & \cellcolor{black!25}\textbf{PLO 4} & \cellcolor{black!25}\textbf{PLO 5} & \cellcolor{black!25}\textbf{PLO 6} & \cellcolor{black!25}\textbf{PLO 7} \\ \hline
+\cellcolor{black!25}\textbf{ILO 1} & *** & ** & *** & ***  & ***  &  & ***  \\ \hline
+\cellcolor{black!25}\textbf{ILO 2} & *** &  &  & *** & * &  &  \\ \hline
+\cellcolor{black!25}\textbf{ILO 3} & ** &  &  & *** &*  &  &  \\ \hline
+\cellcolor{black!25}\textbf{ILO 4} & *** & *** &  & ***  & * &  & * \\ \hline
+\cellcolor{black!25}\textbf{ILO 5} & *** & ***  & ** & ** & *** & ***  & ** \\ \hline
+\cellcolor{black!25}\textbf{ILO 6} & *** & ***  & *** & ** & ***  & ***  & *** \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[!h]
+\center
+\begin{tabular}{c}
+*** - Strongly linked; ** - Medium linked; * - Weekly linked
+\end{tabular}
+\end{table}
+
+\newpage
+
+\begin{table}[!h]
+\begin{tabular}{|p{16cm}|}
+\hline
+\cellcolor{yellow!25} \textbf{Mode of Assessment:}\\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+\begin{tabular}{p{6cm}p{8cm}}
+\underline{\textbf{Formative Assessment* (FA):}} & FA1 10\% + FA2 10\% + FA3 10\%+ FA4 10\% + FA5 10\% + FA6 10 + FA7 10\% = 70\% of total marks. \\
+& \\
+\underline{\textbf{Summative Assessment (SA):}} & Final individual presentation and log book = 30\% of total marks. 
+\end{tabular}
+\end{table}
+
+* The number of formative assessments will vary depending on the number of clients who request service.
+
+\begin{table}[!h]
+\begin{tabular}{|p{16cm}|}
+\hline
+\cellcolor{yellow!25} \textbf{References:}\\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{itemize}
+	\setlength\itemsep{0.1mm}
+\item Talagala, T. S. (2020). Statistical Consultancy Service, \textit{Course website.} \textcolor{blue}{\url{https://scs-fas-sjp.netlify.app/}}
+	
+\item Wickham, H., \& Grolemund, G. (2019). \textit{R for data science: import, tidy, transform, visualize, and model data.} O'Reilly Media, Inc. \textcolor{blue}{https://r4ds.had.co.nz/}
+	
+\item Grolemund, G. (2014). \textit{Hands-on programming with R: write your own functions and simulations.} O'Reilly Media, Inc. \textcolor{blue}{https://rstudio-education.github.io/hopr/}
+
+\item Cabrera, J., \& McDougall, A. (2002). \textit{Statistical consulting.} Springer Science \& Business Media.
+
+\end{itemize}
+
+
+\begin{table}[!h]
+\begin{tabular}{|p{16cm}|}
+\hline
+\cellcolor{black!25}\\ \hline
+\end{tabular}
+\end{table}
