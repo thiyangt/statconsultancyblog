@@ -43,6 +43,8 @@ Lecture 1: [click here](https://thiyangt.github.io/statconsultancy/#53)
 
 Lecture 2: [click here](/slides/lecture2.html)
 
+Lecture 3: [click here](/slides/lecture3.html)
+
 ## Rcodes
 
 Week 1: [link to R-codes files](https://github.com/thiyangt/statconsultancy/tree/main/workflow)
