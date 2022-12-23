@@ -53,6 +53,8 @@ Week 2: [link to R-codes files](https://github.com/thiyangt/statconsultancyblog/
 
 Refer to the folders 1_dashboard, 2_dashboard, 3_dashboard
 
+Week 3: [link to R-codes files](/dashboard/EDA_dashboard.Rmd)
+
 
 ## Projects
 
@@ -76,3 +78,18 @@ Visualize the faculty lectures/practical timetable
 
 Visualize the faculty examination timetable
 
+**Week 3: DSjobtraker survey**
+
+Stage 1: Data collection
+
+Prepare a checklist of points to clarify from the client
+
+## Assignments
+
+Assignment Number   	|  Short description   	|Type  |Start date 	| Due date | Status 	| 
+|:-:	|:-	|:-	|:-	|:-	| :-|
+1  	|  Timetable visualization plan   	| Individual |9/ 12/ 2022 	| 15/ 12/ 2022 | Completed 	| 
+|2	|Timetable visualization: dashboard implementation/ Meeting discussions/ Contributions	| Group |16/ 12/ 2022	| 13/ 01/2023	| Work-in-progress	| 
+|3	| Check-list of points to clarify with the client 	| Individual |23/ 12/ 2022	| 02/ 01/2023	| Work-in-progress	| 
+|4	| Review report for EDA dashboard. Click [here](/dashboard/EDA_dashboard.Rmd) to download the dashboard code. 	| Individual |23/ 12/ 2022	| 06/ 01/2023	| Work-in-progress	|
+|5	| DSjobtraker phase 1: Data entry 	| Individual |23/ 12/ 2022	| 13/ 01/2023	| Work-in-progress	|
