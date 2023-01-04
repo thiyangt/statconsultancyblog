@@ -242,6 +242,14 @@ class: middle, center, inverse
 ---
 
 ![](i9.png)
+---
+
+![](d1.png)
+
+---
+
+![](d2.png)
+
 
 ---
 
