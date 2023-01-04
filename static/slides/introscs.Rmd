@@ -1,9 +1,10 @@
 ---
 title: "Statistical Consulting Service"
-subtitle: "Department of Statistics, University of Sri Jayewardenepura"  
+subtitle: "Dr Thiyanga S. Talagala"  
 author: 
-  - "Dr Thiyanga S. Talagala"
-  - ""
+  - "Department of Statistics"
+  - "Faculty of Applied Sciences"
+  - "University of Sri Jayewardenepura"
 date: ''
 output:
   xaringan::moon_reader:
