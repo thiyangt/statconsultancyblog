@@ -93,3 +93,5 @@ Assignment Number   	|  Short description   	|Type  |Start date 	| Due date | St
 |3	| Check-list of points to clarify with the client 	| Individual |23/ 12/ 2022	| 02/ 01/2023	| Work-in-progress	| 
 |4	| Review report for EDA dashboard. Click [here](/dashboard/EDA_dashboard.Rmd) to download the dashboard code. 	| Individual |23/ 12/ 2022	| 06/ 01/2023	| Work-in-progress	|
 |5	| DSjobtraker phase 1: Data entry 	| Individual |23/ 12/ 2022	| 13/ 01/2023	| Work-in-progress	|
+
+[Introduction to Statistical Consulting Service](/slides/introscs.html)

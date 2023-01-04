@@ -1,0 +1,437 @@
+---
+title: "Exploratory Data Analysis"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(visdat)
+library(plotly)
+library(RColorBrewer)
+testing <- FALSE
+```
+
+Overview
+=======================================================================
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+
+Upload your csv file here. 
+
+```{r}
+fileInput("file", "Choose CSV File",
+                multiple = FALSE,
+                accept = c("text/csv",
+                         "text/comma-separated-values,text/plain",
+                         ".csv"))
+```
+
+
+```{r}
+renderUI({
+if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+selectInput("summary_variable","Select Numerical variable",
+            choices = colnames(df %>% select_if(is.numeric)))
+})
+```
+
+Row
+---------------------------------------------------------------
+
+### Variable types
+
+```{r}
+renderPlot({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  df %>% 
+    skimr::skim() %>% 
+    count(skim_type) %>% 
+    ggplot(aes(x = skim_type,y= n,fill=skim_type))+
+    geom_bar(stat="identity")+
+    labs(title = "Variable Types",x = "Variable type",y = "Count") +
+    coord_flip() + 
+    theme_minimal() +
+    theme(legend.position = "none")
+})
+```
+
+### Summary measures
+
+```{r}
+renderTable({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  vec <- as.numeric(df[,input$summary_variable] %>% unlist())
+  tibble(`Summary measure` = c("Min","Q1","Median","Mean","Q3","Max"),
+         `Value` = c(min(vec,na.rm=TRUE),
+                     quantile(vec,0.25,na.rm=TRUE),
+                     quantile(vec,0.5,na.rm=TRUE),
+                     mean(vec,na.rm=TRUE),
+                     quantile(vec,0.75,na.rm=TRUE),
+                     max(vec,na.rm=TRUE)))
+})
+```
+
+Row
+------------------------------------------------------------------------
+
+### Overview
+```{r}
+DT::renderDataTable({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  DT::datatable(df, rownames = TRUE,options = list(
+    bPaginate = TRUE, 
+    searching = TRUE, 
+    info = FALSE),
+  fillContainer = TRUE)
+})
+```
+
+
+Missing Values
+=========================================================================
+
+Row
+-------------------------------------------------------------------------
+
+### Missing Value Plot
+
+```{r}
+renderPlot({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  df %>% 
+    skimr::skim() %>% 
+    tibble() %>% 
+    filter(n_missing != 0) %>% 
+    mutate(skim_variable = fct_reorder(skim_variable,n_missing)) %>% 
+    ggplot(aes(x = skim_variable,y= n_missing,fill=skim_type))+
+    geom_bar(stat="identity")+
+    labs(title = "Missing values by variables",
+         x = "Variable",y = "Missing count",fill = "Variable type") +
+    coord_flip() + 
+    theme_minimal() +
+    theme(legend.position = "bottom")
+})
+```
+
+### Missing Value Matrix
+
+```{r}
+renderPlot({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  visdat::vis_miss(df,sort_miss=TRUE)
+})
+```
+
+
+Correlation
+==========================================================================
+
+Column {.sidebar}
+----------------------------------------------------------
+  
+```{r}
+renderUI({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  selectInput("Variable 3", label = "Select X axis variable", choices = colnames(df %>% select_if(is.numeric)))
+})
+```
+
+```{r}
+renderUI({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  selectInput("Variable 4", label = "Select Y axis variable", choices = colnames(df %>% select_if(is.numeric)))
+})
+```
+
+Row
+---------------------------------------------------------------
+
+### Correlation (Pearson)
+
+```{r}
+renderPlotly({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  visdat::vis_cor(df %>% select_if(is.numeric)) +
+    scale_fill_gradient(low="yellow",high="dark red")
+  #ggplotly(vis_cor(df %>% select_if(is.numeric)))
+})
+```
+
+### Scatterplot
+
+```{r}
+renderPlot({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  ggplot(df,aes(x = !!sym(input$`Variable 3`),
+                y = !!sym(input$`Variable 4`))) +
+    geom_point() +
+    theme_minimal() +
+    theme(legend.position = "bottom") +
+    labs(x = input$`Variable 3`,y = input$`Variable 4`,
+         title = paste("Scatterplot of",input$`Variable 3`,"and",input$`Variable 4`))
+})
+```
+
+Visualize 1 variable
+===========================================
+
+Column {.sidebar}
+----------------------------------------------------------
+  
+```{r}
+renderUI({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  selectInput("Variable 1", label = "Select Numeric Variable:", choices = colnames(df %>% select_if(is.numeric)))
+})
+```
+
+```{r}
+renderUI({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  selectInput("Variable 2", label = "Select Categorical Variable:", choices = colnames(df %>% select_if(is.character)))
+})
+```
+
+Row 
+-----------------------------------------------------------------------
+### Numerical variable
+```{r}
+renderPlot({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  ggplot(df,aes(x = !!sym(input$`Variable 1`))) +
+    geom_boxplot() +
+    theme_minimal() +
+    labs(x = input$`Variable 1`,
+         title = paste("Boxplot of",input$`Variable 1`))
+  # plot_ly(df,
+  #         x = ~df[[input$`Variable 1`]],
+  #         type = "box") %>%
+  #   layout(title = "",
+  #          xaxis = list(title = "" ,
+  #                       zeroline = FALSE),
+  #          yaxis = list(title = "", zeroline = FALSE))
+})
+```
+
+Row 
+-----------------------------------------------------------------------
+### Categorical variable
+```{r}
+renderPlot({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  ggplot(df,aes(x = !!sym(input$`Variable 2`))) +
+    geom_bar(fill ="firebrick") +
+    theme_minimal() +
+    labs(x = input$`Variable 2`,
+         title = paste("Barplot of",input$`Variable 2`))
+  # plot_ly(df,
+  #         x = ~df[[input$`Variable 2`]],
+  #         type = "bar",coord_flip()) %>%
+  #   layout(title = "",
+  #          xaxis = list(title = "" ,
+  #                       zeroline = FALSE))
+})
+```
+   
+
+Visualize 2 variables
+===========================================
+Column {.sidebar}
+----------------------------------------------------------
+  
+```{r}
+renderUI({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  selectInput("Variable 5", label = "Select numerical variable", choices = colnames(df %>% select_if(is.numeric)))
+})
+```
+
+```{r}
+renderUI({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  selectInput("Variable 6", label = "Select categorical variable:", choices = colnames(df %>% select_if(is.character)))
+})
+```   
+
+Row 
+-----------------------------------------------------------------------
+
+### Visualization
+
+```{r}
+renderPlot({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  ggplot(df,aes(y = !!sym(input$`Variable 5`),
+                x = !!sym(input$`Variable 6`)))+
+    geom_boxplot()+
+    coord_flip()+
+    theme_minimal()+
+    labs(x = input$`Variable 6`,y = input$`Variable 5`,
+         title = paste("Boxplot of",input$`Variable 5`,"by",input$`Variable 6`))
+})
+```
+
+Visualize 3 variables
+===========================================
+Column {.sidebar}
+----------------------------------------------------------
+  
+```{r}
+renderUI({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  selectInput("Variable 7", label = "Select X axis variable", choices = colnames(df %>% select_if(is.numeric)))
+})
+```
+
+```{r}
+renderUI({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  selectInput("Variable 8", label = "Select Y axis variable", choices = colnames(df %>% select_if(is.numeric)))
+})
+```
+
+```{r}
+renderUI({
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  selectInput("Variable 9", label = "Select Color by Variable:", choices = colnames(df %>% select_if(is.character)))
+})
+```
+
+Row 
+-----------------------------------------------------------------------
+
+### Visualization
+
+```{r}
+renderPlot({
+  
+  if(testing){
+  df <- read_csv("Iris.csv")
+  }else{
+  req(input$file)
+  df <- read_csv(input$file$datapath)
+  }
+  ggplot(df,aes(x = !!sym(input$`Variable 7`),
+                y = !!sym(input$`Variable 8`),
+                color = !!sym(input$`Variable 9`))) +
+    geom_point() +
+    theme_minimal() +
+    theme(legend.position = "bottom") + scale_color_brewer(palette="Dark2")
+    labs(x = input$`Variable 7`,y = input$`Variable 8`,
+         title = paste("Scatterplot of",input$`Variable 7`,"and",input$`Variable 8`),subtitle = paste("Color by",input$`Variable 9`))
+  # plot_ly(df,
+  #         x = ~df[[input$`Variable 1`]],
+  #         color = ~df[[input$`Variable 2`]],
+  #         colors = "Paired",
+  #         type = "box") %>%
+  #   layout(title = "",
+  #          xaxis = list(title = "" ,
+  #                       zeroline = FALSE))
+})
+```

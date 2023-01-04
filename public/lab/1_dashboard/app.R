@@ -6,23 +6,21 @@ data(penguins)
 library(ggplot2)
 
 ui <- dashboardPage(
-  dashboardHeader(title="Dashboard"),
+  dashboardHeader(title="My Dashboard"),
   dashboardSidebar(),
   dashboardBody(
-    box(plotOutput("Scatterplot"))
-    )
+    box(plotOutput("scatterplot"))
+    
+    
+  )
 )
 
 server <- function(input, output) { 
-  output$Scatterplot <- renderPlot(ggplot(data = penguins, 
-                                          aes(x = flipper_length_mm,
-                                              y = body_mass_g)) +
-                                     geom_point(aes(color = species, 
-                                                    shape = species),
-                                                size = 3,
-                                                alpha = 0.8) )
-    
-    
+ output$scatterplot <- renderPlot({
+   ggplot(penguins, aes(x=bill_length_mm, y=flipper_length_mm)) +
+     geom_point()
+ })
+  
     }
 
 shinyApp(ui, server)
