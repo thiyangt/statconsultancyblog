@@ -1,0 +1,95 @@
+---
+title: "Client Reporting: the Biggest Mistakes to Avoid"
+subtitle: ""  
+author: 
+  - "Dr Thiyanga S. Talagala"
+  - ""
+date: ''
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#081d58",
+  text_bold_color = "#ce1256",
+  title_slide_text_color = "#edf8b1",
+  header_font_google = google_font("Josefin Sans"),
+  base_font_size = "20px",
+  text_font_size = "1.5rem"
+ #text_font_google   = google_font("Montserrat", "300", "300i")
+ # code_font_google   = google_font("Fira Mono")
+)
+```
+
+
+## Client Reporting: the Biggest Mistakes
+
+1. Making reports too long and monotonous
+
+2. Not choosing right visuals
+
+3. No summary of work
+
+4. Reporting too frequently or infrequently
+
+5. Spending too much time on report 
+
+6. Fully automated without thinking of the client’s needs
+
+---
+
+
+
+## How to Create a Consulting Report?
+
+1. Make a title page
+
+2. Include a table of contents
+
+3. Include an executive summary: This is to ensure that your readers have a rough idea of the report’s content and encourage them to read on
+
+4. Write an introduction
+
+5. Methodology/ Data Analysis
+
+6. Summary/ Conclusions
+
+7. Appendix
+
+---
+
+## Tips for Writing a Client Report
+
+1. Maximize readability
+
+2. Write clearly
+
+3. Be accurate
+
+4. Write for your audience
+
+---
+
+## In-class:  Errors Made on Your Reports

@@ -1,0 +1,88 @@
+---
+title: "Data Quality Analysis (DQA)"
+subtitle: ""  
+author: 
+  - "Dr Thiyanga S. Talagala"
+  - ""
+date: ''
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#081d58",
+  text_bold_color = "#ce1256",
+  title_slide_text_color = "#edf8b1",
+  header_font_google = google_font("Josefin Sans"),
+  base_font_size = "20px",
+  text_font_size = "1.5rem"
+ #text_font_google   = google_font("Montserrat", "300", "300i")
+ # code_font_google   = google_font("Fira Mono")
+)
+```
+
+## What is Data Quality Analysis?
+
+Process of analyzing the quality of data in datasets to determine potential issues, shortcomings, and errors.
+
+Missing values
+
+- Inconsistent values
+
+- Wrong information due to manual/ automated data errors 
+
+- Wrong metadata information
+
+---
+
+## Dimensions of Data Quality Analysis
+
+1. Consistency
+
+2. Accuracy
+
+3. Validity
+
+4. Timeliness
+
+5. Uniqueness
+
+6. Completeness
+
+---
+
+Tasks in DQA
+
+1. Data profiling
+
+2. Data cleansing
+
+3. Data reduction
+
+4. Data transformation/ Data discretization
+
+5. Data enrichment
+
+6. Data validation

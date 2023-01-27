@@ -45,6 +45,10 @@ Lecture 2: [click here](/slides/lecture2.html)
 
 Lecture 3: [click here](/slides/lecture3.html)
 
+Lecture 4: [click here](/slides/lecture4.html)
+
+Lecture 5: [click here](/slides/lecture5.html)
+
 ## Rcodes
 
 Week 1: [link to R-codes files](https://github.com/thiyangt/statconsultancy/tree/main/workflow)
@@ -83,6 +87,20 @@ Visualize the faculty examination timetable
 Stage 1: Data collection
 
 Prepare a checklist of points to clarify from the client
+
+**Week 4:**
+
+Client 1: Data analysis and related questions
+
+**Week 5:**
+
+Client 2: Data Quality Analysis(DQA) report
+
+**Week 6:**
+
+Client 3: Data Analysis
+
+Client 4: Data Analysis
 
 ## Assignments
 
