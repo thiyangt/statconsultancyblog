@@ -39,15 +39,20 @@ Course outline: [click here](/co/STA474_2_statistical_consultancy_2022_2023.pdf)
 
 ## Lecture Slides
 
-Lecture 1: [click here](https://thiyangt.github.io/statconsultancy/#53)
+Slides 1: [click here](https://thiyangt.github.io/statconsultancy/#53)
 
-Lecture 2: [click here](/slides/lecture2.html)
+Slides 2: [click here](/slides/lecture2.html)
 
-Lecture 3: [click here](/slides/lecture3.html)
+Slides 3: [click here](/slides/lecture3.html)
 
-Lecture 4: [click here](/slides/lecture4.html)
+Slides 4: [click here](/slides/lecture4.html)
 
-Lecture 5: [click here](/slides/lecture5.html)
+Slides 5: [click here](/slides/lecture5.html)
+
+Slides 5: [click here](/slides/lecture5.html)
+
+Slides 6: [click here](/slides/lecture6.html)
+
 
 ## Rcodes
 
@@ -101,6 +106,16 @@ Client 2: Data Quality Analysis(DQA) report
 Client 3: Data Analysis
 
 Client 4: Data Analysis
+
+**Week 7:**
+
+In-class written assignment
+
+Client 3/4: Data Analysis
+
+**Week 8**
+
+Client 3/4: FInalize the analysis
 
 ## Assignments
 

@@ -1,0 +1,147 @@
+---
+title: "Reading/ Listening/ Explaining Skills"
+subtitle: ""  
+author: 
+  - "Dr Thiyanga S. Talagala"
+  - ""
+date: ''
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#081d58",
+  text_bold_color = "#ce1256",
+  title_slide_text_color = "#edf8b1",
+  header_font_google = google_font("Josefin Sans"),
+  base_font_size = "20px",
+  text_font_size = "1.5rem"
+ #text_font_google   = google_font("Montserrat", "300", "300i")
+ # code_font_google   = google_font("Fira Mono")
+)
+```
+
+## Reading skills
+
+- Use background knowledge
+
+- Ask questions
+
+- Identify the author's question
+
+- Identify the main idea
+
+- Recognize sequence
+
+- Recognize cause and effect
+
+- Make inference
+
+
+
+
+
+---
+
+- Make predictions
+
+- Summarize
+
+- Distinguish between fact and opinion
+
+- Find facts and details
+
+- Recognize compare and contrast
+
+- Make connections
+
+- Visualize
+
+- Read for clarity
+
+- Adjust your pacing
+
+
+---
+
+## Reading for meaning: Identifying the main idea of the story
+
+- Who
+
+- What
+
+- When 
+
+- Where
+
+- Why
+
+- How
+
+---
+
+## How to explain things more effectively?
+
+**1. Keep in mind others’ point of view.**
+
+**2. Listen and respond to questions**
+
+-  It’s easy to become annoyed when someone is asking questions sometimes.
+
+-  Be happy that the other person is
+interested enough to ask questions. 
+
+- To minimize confusion and misunderstanding, try to paraphrase or summarize a question before you answer it.
+
+---
+
+- This is important to let the person know they were being
+heard and understood. It is particularly important in a group setting to repeat the question.
+
+
+**3. Ask questions to determine client’s understanding**
+
+- Better to use open ended, which gives people a chance to provide detailed information
+
+**4.  Take it step by step.**
+
+- Make information digestible by breaking it up into small bites.
+
+**7. Use analogies to make concepts clearer**
+
+---
+
+**8. Verify understanding.** 
+
+- Check for understanding often with appropriate questions such as, "Am I
+making sense?" or "Would you like me to go over that one time again?"
+
+**9. Use visuals**
+
+- Some people absorb information more efficiently through auditory means, while others through visual means. To ensure that the information is registered in the student's mind, it is often necessary to present some kind of visual explanation in addition to a spoken explanation.
+
+**10. Make sure the people who heard your explanation
+truly did understand it.**
+
