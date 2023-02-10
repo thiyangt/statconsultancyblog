@@ -39,7 +39,7 @@ Course outline: [click here](/co/STA474_2_statistical_consultancy_2022_2023.pdf)
 
 ## Lecture Slides
 
-Slides 1: [click here](https://thiyangt.github.io/statconsultancy/#53)
+Slides 1: [click here](https://thiyangt.github.io/statconsultancy/#1)
 
 Slides 2: [click here](/slides/lecture2.html)
 
