@@ -53,6 +53,7 @@ Slides 5: [click here](/slides/lecture5.html)
 
 Slides 6: [click here](/slides/lecture6.html)
 
+Slide 7:  [click here](/slides/lecture7.html)
 
 ## Rcodes
 
